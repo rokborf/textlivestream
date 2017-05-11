@@ -1,6 +1,9 @@
+const express = require('express');
 const streamRouter = require('./stream');
 const messageRouter = require('./message');
 
-streamRouter.use('/streams/:stream_id/messages', messageRouter);
+const router = express.Router();
+router.use('/streams', streamRouter);
+router.use('/streams/:stream_id/messages', messageRouter);
 
-module.exports = streamRouter;
+module.exports = router;

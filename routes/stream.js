@@ -3,7 +3,7 @@ const Stream = require('../models/stream');
 
 const router = express.Router();
 
-router.route('/streams/')
+router.route('/')
   .post((req, res) => {
     const stream = new Stream({
       title: req.body.title,
@@ -25,7 +25,7 @@ router.route('/streams/')
     });
   });
 
-router.route('/streams/:stream_id')
+router.route('/:stream_id')
   .get((req, res) => {
     Stream.findById(req.params.stream_id, (err, stream) => {
       if (err) res.send(err);

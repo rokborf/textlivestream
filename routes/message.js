@@ -20,6 +20,7 @@ router.route('/')
     wss.broadcast({
       type: 'newMessage',
       payload: {
+        _id: message._id,
         streamId: req.params.stream_id,
         text: req.body.text,
         postDate: message.postDate,

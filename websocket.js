@@ -6,7 +6,6 @@ wss.on('connection', (ws) => {
   ws.on('message', (message) => {
 
   });
-  ws.send('something');
 });
 
 wss.broadcast = function broadcast(message) {

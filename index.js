@@ -11,33 +11,14 @@ mongoose.Promise = require('bluebird');
 
 mongoose.connect('mongodb://localhost/textlivestream');
 
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
+app.listen(8888, () => {
+  console.log('Example app listening on port 8888!');
 });
 
-
-/*
-function sendAll(stream, message) {
-  for (let i = 0; i < clients.length; i++) {
-    if (~clients[i].streams.indexOf(stream)) {
-      clients[i].ws.send({
-        type: 'newMessage',
-        payload: {
-          text: message,
-        },
-      });
-    }
-  }
-}
-*/
-
-/*
-{
-  type: connectToStream, newMessage,
-  payload: {}
-}
-*/
-
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    next();
+});
 
 app.use('/api', require('./routes'));
 

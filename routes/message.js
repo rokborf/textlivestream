@@ -1,5 +1,6 @@
 const express = require('express');
 const Message = require('../models/message');
+const wss = require('../websocket');
 
 const router = express.Router({ mergeParams: true });
 
@@ -14,6 +15,15 @@ router.route('/')
       if (err) res.send(err);
 
       res.json({ message: 'Message created!' });
+    });
+
+    wss.broadcast({
+      type: 'newMessage',
+      payload: {
+        streamId: req.params.stream_id,
+        text: req.body.text,
+        postDate: message.postDate,
+      },
     });
   })
   .get((req, res) => {

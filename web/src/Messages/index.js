@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Websocket from 'react-websocket';
+import moment from 'moment';
 
 class Messages extends Component {
     constructor(props) {
@@ -37,7 +38,7 @@ class Messages extends Component {
 
                 {this.state.messages.slice(0).reverse().map(message =>
                     <div key={message._id}>
-                        {message.postDate} - {message.text}
+                        {moment(message.postDate).format('MMMM Do YYYY, HH:mm')} - {message.text}
                     </div>
                 )}
             </div>

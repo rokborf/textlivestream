@@ -2,3 +2,113 @@
   width: 980px;
   margin: 0 auto;
 }
+
+h2 {
+  text-align: center;
+}
+
+.message {
+  margin: 10px 0 02px;
+  border: 1px solid #eee;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+
+.message__date {
+  font-size: 11px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.anim-appear {
+  opacity: 0.01;
+}
+
+.anim-appear.anim-appear-active{
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.stream-list-item__date {
+  font-size: 13px;
+  color: #9e0000;
+}
+
+.stream-list-item {
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.stream-list-item__link {
+  font-size: 22px;
+  display: block;
+  margin: 10px 0;
+  color: #0d4ea5;
+}
+
+.stream-list-item__date strong {
+  color: #333;
+}
+
+.stream-list-item__description {
+  margin-top: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.stream {
+  margin: 25px 0 50px;
+}
+
+.stream-header {
+  text-align: center;
+}
+
+.stream-header h2{
+  font-size: 26px;
+  margin-bottom: 0;
+}
+
+.stream-header__date {
+  font-size: 13px;
+  color: #9e0000;
+}
+
+.back-link {
+  text-align: right;
+  display: block;
+  margin: 20px;
+  font-size: 13px;
+  color: #0d4ea5;
+}
+
+.add-message {
+  padding: 20px;
+  background: #eee;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.add-message__input {
+  display: block;
+  width: 300px;
+  height: 25px;
+  margin: 0 auto 20px;
+  font-size: 13px;
+  padding: 0 4px;
+}
+
+.add-message__submit {
+  padding: 7px 20px;
+  font-size: 13px;
+  background: #9e0000;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.add-message__submit:hover {
+  opacity: 0.8;
+}

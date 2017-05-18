@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Websocket from 'react-websocket';
 import moment from 'moment';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class Messages extends Component {
     constructor(props) {
@@ -32,14 +33,20 @@ class Messages extends Component {
 
     render() {
         return (
-            <div>
-                <h4>Messages:</h4>
+            <div className="stream">
                 <Websocket url={`ws://localhost:8080/${this.props.match.params.id}`} onMessage={this.handleData.bind(this)}/>
 
                 {this.state.messages.slice(0).reverse().map(message =>
-                    <div key={message._id}>
-                        {moment(message.postDate).format('MMMM Do YYYY, HH:mm')} - {message.text}
-                    </div>
+                    <ReactCSSTransitionGroup transitionName="anim" transitionAppear={true} transitionAppearTimeout={5000} transitionEnter={false} transitionLeave={false} key={message._id}>
+                        <div className="message">
+                            <div className="message__date">
+                                {moment(message.postDate).format('MMMM Do YYYY, HH:mm')}
+                            </div>
+                            <div className="message__text">
+                                {message.text}
+                            </div>
+                        </div>
+                    </ReactCSSTransitionGroup>
                 )}
             </div>
         );

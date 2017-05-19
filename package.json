@@ -27,6 +27,7 @@
     "mongoose": "^4.9.8",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.5.2",
+    "react-date-picker": "^5.3.28",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
     "react-websocket": "^1.1.7",

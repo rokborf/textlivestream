@@ -15,9 +15,9 @@ app.listen(8888, () => {
   console.log('Example app listening on port 8888!');
 });
 
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    next();
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  next();
 });
 
 app.use('/api', require('./routes'));

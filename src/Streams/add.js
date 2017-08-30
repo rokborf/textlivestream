@@ -3,7 +3,7 @@ import 'react-date-picker/index.css';
 import { DateField } from 'react-date-picker';
 
 class AddStream extends Component {
-  handleSubmit(event) {
+  static handleSubmit(event) {
     event.preventDefault();
 
     const inputFields = event.target.querySelectorAll('input');
